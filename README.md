@@ -31,7 +31,7 @@ download sample from repository
 ### Usage
 
 If your going to use the <br>Activity Builder</b>:
-    ~~~~ OpenSources.Builder(MainActivity.this).start(options);~~~~
+    ```OpenSources.Builder(MainActivity.this).start(options);```
     
     then you need to include the activity name in the manifest
      <activity
