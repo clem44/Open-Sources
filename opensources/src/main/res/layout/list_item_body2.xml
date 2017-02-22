@@ -9,7 +9,7 @@
     app:content="@+id/body"
     app:contentContainer="@+id/content_container"
     app:handle="@+id/title_handle"
-    app:expand="false"
+    app:expand="true"
     android:id="@+id/collapse_panel">
 
     <LinearLayout
@@ -50,7 +50,7 @@
         android:id="@+id/content_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentTop="false"
         android:paddingBottom="5dp">
 
         <TextView

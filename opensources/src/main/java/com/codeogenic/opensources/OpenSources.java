@@ -97,8 +97,9 @@ public class OpenSources extends AppCompatActivity {
         mList = options.getParcelableArrayList(OSOptions.ITEMS);
         //mList = (ArrayList<ListItem>) options.getSerializable(OSOptions.ITEMS);
         listView = (ListView) findViewById(R.id.mylistview);
-        mAdapter = new OPListAdapter(this, mList,sum,"",options.getInt(OSOptions.LOGO));
+        mAdapter = new OPListAdapter(this, mList,sum,options.getString(OSOptions.HEADING_TEXT),options.getInt(OSOptions.LOGO));
         mAdapter.setStyle(options.getInt(OSOptions.STYLE));
+        mAdapter.showHeaderImage(options.getBoolean(OSOptions.WITH_HEADER));
 
         listView.setAdapter(mAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

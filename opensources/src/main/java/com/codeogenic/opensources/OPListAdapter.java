@@ -40,10 +40,13 @@ public class OPListAdapter extends BaseAdapter {
     private boolean expanded;
     private boolean isAnimating;
     private int mStyle = OSOptions.STYLE_1;
+    private String wrap_style;
+    private boolean withHeader = true;
+    private boolean withHeaderImg = true;
 
 
     public OPListAdapter(Context context, ArrayList<ListItem> items, String summary, String heading, int logo) {
-        this.heading = heading;
+        this.heading = !TextUtils.isEmpty(heading)?heading:"Open Source Libraries";
         this.logo = logo;
         this.summary = summary;
         this.context = context;
@@ -75,6 +78,8 @@ public class OPListAdapter extends BaseAdapter {
                 isAnimating = false;
             }
         });
+        wrap_style ="<style body *{text-align:justify} p{text-align:justify}></style>";
+        //wrap_end ="</style>";
     }
 
     @Override
@@ -98,7 +103,7 @@ public class OPListAdapter extends BaseAdapter {
         ListItem current = (ListItem) getItem(position);
         ViewHolder holder;
 
-        if (position == 0) {
+        if (withHeader && position == 0 ) {
             if (convertView == null) {
                 convertView = layoutInflater.inflate(R.layout.item_header, null);
                 holder = new HeaderHolder(convertView, current);
@@ -106,7 +111,6 @@ public class OPListAdapter extends BaseAdapter {
             } else {
                 holder = (ViewHolder) convertView.getTag();
             }
-
         }
 
         switch (mStyle) {
@@ -158,6 +162,13 @@ public class OPListAdapter extends BaseAdapter {
         this.mStyle = style;
     }
 
+    public void showHeaderImage(boolean withH) {
+        this.withHeaderImg = withH;
+    }
+    public void showHeader(boolean withH) {
+        this.withHeader = withH;
+    }
+
     class HeaderHolder extends ViewHolder {
         ImageView logoImage;
         TextView heading, summaryText;
@@ -173,7 +184,17 @@ public class OPListAdapter extends BaseAdapter {
             heading = (TextView) convertView.findViewById(R.id.title);
             summaryText = (TextView) convertView.findViewById(R.id.summary);
             try {
-                summaryText.setText(!TextUtils.isEmpty(summary) ? summary : "");
+                summary = !TextUtils.isEmpty(summary) ?  wrap_style + summary: "";
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    summaryText.setText(Html.fromHtml(summary, Html.FROM_HTML_MODE_COMPACT));
+                }else{
+                    summaryText.setText(Html.fromHtml(summary));
+                }
+                if(!withHeaderImg){
+                    logoImage.setVisibility(View.GONE);
+                    return;
+                }
                 logoImage.setImageResource(logo);
             } catch (NullPointerException ne) {
                 ne.printStackTrace();
@@ -213,6 +234,8 @@ public class OPListAdapter extends BaseAdapter {
             String body = !TextUtils.isEmpty(current.getBody()) ? current.getBody() : "";
 
             body += !TextUtils.isEmpty(current.getUrl()) ? "\n Source -> " + current.getUrl() : "";
+
+            body = wrap_style +body;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 mTextView.setText(Html.fromHtml(body, Html.FROM_HTML_MODE_COMPACT));
             } else {
@@ -225,7 +248,7 @@ public class OPListAdapter extends BaseAdapter {
                 public void onClick(View view) {
                     Log.w(TAG, "item headerView clicked");
                     cl.toggle();
-                    if (!isAnimating)
+                    if (!isAnimating && !cl.isAnimating())
                         img_button.animate().rotationBy(180f).setDuration(time)
                                 .setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
                             @Override
@@ -285,8 +308,8 @@ public class OPListAdapter extends BaseAdapter {
 
             mTextView = (TextView) convertView.findViewById(R.id.body);
             String body = !TextUtils.isEmpty(current.getBody()) ? current.getBody() : "";
-
             body += !TextUtils.isEmpty(current.getUrl()) ? "\n Source -> " + current.getUrl() : "";
+            body = wrap_style +body;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 mTextView.setText(Html.fromHtml(body, Html.FROM_HTML_MODE_COMPACT));
             } else {
@@ -297,11 +320,10 @@ public class OPListAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View view) {
                     //Log.w(TAG, "item headerView clicked");
-
-                  //  if (!cl.isAnimating()) {
+                   if (!cl.isAnimating()) {
                         img_button.toggle();
                         cl.toggle();
-                   // }
+                    }
                 }
             });
         }

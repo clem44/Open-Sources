@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RadioGroup;
+
 import com.codeogenic.opensources.ListItem;
 import com.codeogenic.opensources.OSOptions;
 import com.codeogenic.opensources.OpenSources;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn_sources, btn_frag;
     CheckBox checkBox0, checkBox1, checkBox2, checkBox3, checkBox4, checkBox5;
     RadioGroup radioGroup;
+    EditText heading;
     OSOptions options = new OSOptions();
     ArrayList<ListItem> data = new ArrayList<>();
 
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btn_sources = (Button) findViewById(R.id.btn_sources);
         btn_frag = (Button) findViewById(R.id.btn_frag);
 
+        heading = (EditText) findViewById(R.id.title_editText);
         checkBox0 = (CheckBox) findViewById(R.id.checkBox0);
         checkBox1 = (CheckBox) findViewById(R.id.checkBox1);
         checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
@@ -44,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int id) {
 
-                if(id == R.id.style_1){
+                if (id == R.id.style_1) {
                     options.setStyle(OSOptions.STYLE_1);
 
-                }else if(id==R.id.style_2){
+                } else if (id == R.id.style_2) {
                     options.setStyle(OSOptions.STYLE_2);
                 }
 
@@ -61,15 +65,10 @@ public class MainActivity extends AppCompatActivity {
         checkBox4.setOnCheckedChangeListener(new MyCheckListener());
         checkBox5.setOnCheckedChangeListener(new MyCheckListener());
 
-
         btn_sources.setOnClickListener(new ButtonListener());
         btn_frag.setOnClickListener(new ButtonListener());
 
         initData();
-
-
-
-
         options.setStyle(OSOptions.STYLE_1);
 
     }
@@ -96,13 +95,13 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.btn_sources:
                     Log.w(TAG, "open sources clicked");
-                    options.setTitle("Open Sources");
+                    options.setToolbarTitle("Open Sources");
+                    options.setHeaderText("Libraries We Use");
                     options.setTypefaceBold("fonts/ClanPro-Medium.otf");
                     options.setTypefaceRegular("fonts/ClanPro-Book.otf");
                     options.setLogoResource(R.mipmap.ic_launcher);
                     options.setSummary("The listed following are external libraries we have included in this application. We thank the open source community for all of their contributions.");
                     options.setTheme(OSOptions.DARK_THEME);
-                  //  options.setStyle(OSOptions.STYLE_2);
                     OpenSources.Builder(MainActivity.this).start(options);
                     break;
 
@@ -118,37 +117,37 @@ public class MainActivity extends AppCompatActivity {
         public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
             switch (compoundButton.getId()) {
                 case R.id.checkBox0:
-                    if(checked)
+                    if (checked)
                         options.addItem(data.get(0));
                     else
                         options.removeItem(data.get(0));
                     break;
                 case R.id.checkBox1:
-                    if(checked)
+                    if (checked)
                         options.addItem(data.get(1));
                     else
                         options.removeItem(data.get(1));
                     break;
                 case R.id.checkBox2:
-                    if(checked)
+                    if (checked)
                         options.addItem(data.get(2));
                     else
                         options.removeItem(data.get(2));
                     break;
                 case R.id.checkBox3:
-                    if(checked)
+                    if (checked)
                         options.addItem(data.get(3));
                     else
                         options.removeItem(data.get(3));
                     break;
                 case R.id.checkBox4:
-                    if(checked)
+                    if (checked)
                         options.addItem(data.get(4));
                     else
                         options.removeItem(data.get(4));
                     break;
                 case R.id.checkBox5:
-                    if(checked)
+                    if (checked)
                         options.addItem(data.get(5));
                     else
                         options.removeItem(data.get(5));

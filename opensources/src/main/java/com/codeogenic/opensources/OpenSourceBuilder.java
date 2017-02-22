@@ -63,7 +63,7 @@ public final class OpenSourceBuilder {
          * @param title
          */
         public void setTitle(String title) {
-            options.setTitle(title);
+            options.setToolbarTitle(title);
         }
 
         public void setItems(ArrayList<ListItem> items) {
@@ -134,7 +134,7 @@ public final class OpenSourceBuilder {
          * @param title
          */
         public void setTitle(String title) {
-            options.setTitle(title);
+            options.setToolbarTitle(title);
         }
 
         public void setItems(ArrayList<ListItem> items) {

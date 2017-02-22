@@ -139,8 +139,7 @@ public class CollapsingLayout extends LinearLayout {
         //mCollapsedHeight = mHandle.getMeasuredHeight();
         mCollapsedHeight = 0;
         mContentWidth = mContentContainer.getMeasuredWidth();
-        mContentHeight = mContentContainer.getMeasuredHeight()+10+
-                mContent.getPaddingBottom()+mContent.getPaddingTop();
+        mContentHeight = mContentContainer.getMeasuredHeight()+20;
 
         /*mContentHeight = mHandle.getMeasuredHeight()+
                 mContent.getMeasuredHeight()+10+
