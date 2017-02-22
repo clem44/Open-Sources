@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#4b4c4d</color>
+    <color name="colorPrimary">#8f0dd6</color>
+    <color name="colorPrimaryDark">#536eea</color>
+    <color name="style_two_checkcolor">@color/colorPrimary</color>
+    <color name="style_two_uncheckcolor">#dddddd</color>
+    <color name="white">#ffffff</color>
+    <declare-styleable name="CollapsingLayout"><attr format="reference" name="handle"/><attr format="reference" name="content"/><attr format="reference" name="contentContainer"/><attr format="reference" name="titleHeader"/><attr format="integer" name="animationDuration"/><attr format="boolean" name="expand"/></declare-styleable>
+    <declare-styleable name="SwellCheckBox"><attr format="color" name="unCheckColor"/><attr format="color" name="checkedColor"/><attr format="color" name="lineColor"/><attr format="boolean" name="hideTick"/><attr format="integer" name="circleRadius"/><attr format="enum" name="style">
+            <enum name="circle" value="0"/>
+            <enum name="square" value="1"/>
+            <enum name="tick" value="2"/>
+        </attr><attr format="dimension" name="lineWidth"/><attr format="integer" name="animDuration"/></declare-styleable>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="app_name">OpenSources</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14pt</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+        <!--<item name="background">@color/white</item>-->
+        <!--<item name="android:alertDialogTheme">@style/CustomDialogTheme</item>-->
+        <!--<item name="android:dialogTheme">@style/CustomDialogTheme</item>-->
+        <item name="android:textViewStyle">@style/MytextViews</item>
+    </style>
+    <style name="MytextViews" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#313131</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

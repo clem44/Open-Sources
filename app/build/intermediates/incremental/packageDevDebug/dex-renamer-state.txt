@@ -1,0 +1,4 @@
+#Wed Feb 22 20:32:50 GMT 2017
+base.0=/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/transforms/dex/dev/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/transforms/dex/dev/debug/folders/1000/1f/main/classes.dex
