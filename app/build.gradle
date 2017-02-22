@@ -17,6 +17,35 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        prod {
+            applicationId "com.codeogenic.opensource_libraries"
+            versionCode 1
+            versionName "1.0"
+            minSdkVersion 17
+            targetSdkVersion 25
+        }
+        dev {
+            applicationId "com.codeogenic.opensource_libraries"
+            versionCode 1
+            versionName "1.0"
+            minSdkVersion 17
+            targetSdkVersion 25
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def project = "OpenSources"
+            def SEP = "_"
+            def flavor = variant.productFlavors[0].name
+            def buildType = variant.variantData.variantConfiguration.buildType.name
+            def version = variant.versionName
+
+            def newApkName = project + SEP + flavor + SEP + buildType + SEP + version + ".apk"
+
+            output.outputFile = new File(output.outputFile.parent, newApkName)
+        }
+    }
 }
 
 dependencies {
