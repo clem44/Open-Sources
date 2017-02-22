@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_open_sources"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codeogenic.opensources.OpenSources"
+
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:elevation="4dp"
+        style="@style/Widget.AppCompat.Toolbar"
+        android:minHeight="?android:attr/actionBarSize"
+        android:id="@+id/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/header_view"
+        android:minHeight="100dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/toolbar"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/container_head">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+               android:src="@android:drawable/ic_menu_report_image"
+                android:id="@+id/logo"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:text="Libraries We Use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="30dp"
+                android:padding="10dp"
+                android:textSize="30sp"
+                android:textStyle="normal|bold"
+                android:textColor="@android:color/holo_purple"
+                android:layout_below="@+id/container_head"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
+
+        <TextView
+            android:text="sum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/summary"
+            android:layout_below="@+id/container_head"
+            android:layout_marginTop="16dp"
+            android:textSize="14sp"
+            android:padding="10dp" />
+
+
+
+    </RelativeLayout>
+
+
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#d9d9d9"
+        android:dividerHeight="0.5dp"
+        android:id="@+id/listview"
+        android:layout_below="@+id/header_view"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:visibility="gone" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mylistview"
+        android:visibility="visible"
+        android:layout_below="@+id/toolbar" />
+
+</RelativeLayout>

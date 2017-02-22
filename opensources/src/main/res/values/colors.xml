@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#8f0dd6</color>
+    <color name="colorPrimaryDark">#536eea</color>
+    <!--<color name="colorPrimaryLight">#23000000</color>-->
+    <color name="colorAccent">#4b4c4d</color>
+    <color name="white">#ffffff</color>
+    <color name="style_two_checkcolor">@color/colorPrimary</color>
+    <color name="style_two_uncheckcolor">#dddddd</color>
+
+</resources>
