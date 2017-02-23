@@ -20,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
             android:layout_weight="3"
             android:src="@android:drawable/ic_menu_report_image"
             android:scaleType="fitCenter" />
@@ -34,11 +33,12 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="30dp"
             android:layout_weight="1"
-            android:padding="10dp"
             android:text="Libraries We Use"
             android:textColor="@android:color/holo_purple"
             android:textSize="30sp"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
 
     </LinearLayout>
 
