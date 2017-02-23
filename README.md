@@ -42,7 +42,8 @@ If your going to use the <br>Activity Builder</b>:
             android:name="com.codeogenic.opensources.OpenSources"/>
             
 
-  Base setup:
+### Base setup:
+  Activity Builder
   ```
   OSOptions options = new OSOptions();
   options.setTitle("Open Sources");
@@ -59,6 +60,19 @@ If your going to use the <br>Activity Builder</b>:
   options.addItem(new ListItem("Fancy Button",getString(R.string.fancy_button),"https://github.com/medyo/Fancybuttons"));
   options.addItem(new ListItem("Material Drawer",getString(R.string.mike_penz),""));
   OpenSources.Builder(Settings.this).start(options);
+  ```
+  
+  Fragment Builder
+  ```
+    options.setHeaderText(heading.getText().toString());
+    options.setTypefaceBold("fonts/ClanPro-Medium.otf");
+    options.setTypefaceRegular("fonts/ClanPro-Book.otf");
+    options.setLogoResource(R.mipmap.ic_launcher);
+    options.setSummary("The listed following are external libraries we have"+
+    " included in this application. We thank the open source community for all of their contributions.");
+    options.setTheme(OSOptions.DARK_THEME);
+    OpenSources.FragmentBuilder(R.id.activity_main,MainActivity.this.getSupportFragmentManager())
+    .start(options);
   ```
         
 ### TODO
