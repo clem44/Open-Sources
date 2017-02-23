@@ -63,8 +63,11 @@ If your going to use the <br>Activity Builder</b>:
   ```
   
   Fragment Builder
+    same as above just use  ``` OpenSources.FragmentBuilder( layoutId , getSupportFragmentManager())
+    .start(options);```
+    see below
+    
   ```
-    options.setHeaderText(heading.getText().toString());
     options.setTypefaceBold("fonts/ClanPro-Medium.otf");
     options.setTypefaceRegular("fonts/ClanPro-Book.otf");
     options.setLogoResource(R.mipmap.ic_launcher);
