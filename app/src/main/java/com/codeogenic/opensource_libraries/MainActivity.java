@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     Button btn_sources, btn_frag;
-    CheckBox checkBox0, checkBox1, checkBox2, checkBox3, checkBox4, checkBox5;
+    CheckBox checkBox0, checkBox1, checkBox2, checkBox3, checkBox4, checkBox5,checkBox6,checkBox7,checkBox8;
     RadioGroup radioGroup;
     EditText heading;
     OSOptions options = new OSOptions();
@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         checkBox3 = (CheckBox) findViewById(R.id.checkBox3);
         checkBox4 = (CheckBox) findViewById(R.id.checkBox4);
         checkBox5 = (CheckBox) findViewById(R.id.checkBox5);
+        checkBox6 = (CheckBox) findViewById(R.id.checkBox6);
+        checkBox7 = (CheckBox) findViewById(R.id.checkBox7);
+        checkBox8 = (CheckBox) findViewById(R.id.checkBox8);
 
         radioGroup = (RadioGroup) findViewById(R.id.style_group);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -72,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         checkBox3.setOnCheckedChangeListener(new MyCheckListener());
         checkBox4.setOnCheckedChangeListener(new MyCheckListener());
         checkBox5.setOnCheckedChangeListener(new MyCheckListener());
+        checkBox6.setOnCheckedChangeListener(new MyCheckListener());
+        checkBox7.setOnCheckedChangeListener(new MyCheckListener());
+        checkBox8.setOnCheckedChangeListener(new MyCheckListener());
 
         btn_sources.setOnClickListener(new ButtonListener());
         btn_frag.setOnClickListener(new ButtonListener());
@@ -89,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
         data.add(new ListItem("Fancy Button", getString(R.string.fancy_button), "https://github.com/medyo/Fancybuttons"));
         data.add(new ListItem("Material Dialogs", getString(R.string.fancy_button), ""));
         data.add(new ListItem("Retrofit", getString(R.string.MIT_Licence), ""));
+        data.add(new ListItem("Glide", getString(R.string.MIT_Licence), ""));
+        data.add(new ListItem("Gson", getString(R.string.MIT_Licence), ""));
+        data.add(new ListItem("RxJava", getString(R.string.MIT_Licence), ""));
 
         options.addItem(data.get(0));
         options.addItem(data.get(1));
@@ -207,6 +216,24 @@ public class MainActivity extends AppCompatActivity {
                         options.addItem(data.get(5));
                     else
                         options.removeItem(data.get(5));
+                    break;
+                case R.id.checkBox6:
+                    if (checked)
+                        options.addItem(data.get(6));
+                    else
+                        options.removeItem(data.get(6));
+                    break;
+                case R.id.checkBox7:
+                    if (checked)
+                        options.addItem(data.get(7));
+                    else
+                        options.removeItem(data.get(7));
+                    break;
+                case R.id.checkBox8:
+                    if (checked)
+                        options.addItem(data.get(8));
+                    else
+                        options.removeItem(data.get(8));
                     break;
 
             }

@@ -102,15 +102,16 @@ public class OPListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         ListItem current = (ListItem) getItem(position);
+        View rowView = convertView;
         ViewHolder holder;
 
         if (withHeader && position == 0) {
-            if (convertView == null) {
-                convertView = layoutInflater.inflate(R.layout.item_header, null);
-                holder = new HeaderHolder(convertView, current);
-                convertView.setTag(holder);
+            if (rowView == null) {
+                rowView= layoutInflater.inflate(R.layout.item_header,parent, false);
+                holder = new HeaderHolder(rowView, current);
+                rowView.setTag(holder);
             } else {
-                holder = (ViewHolder) convertView.getTag();
+                holder = (ViewHolder) rowView.getTag();
             }
         }
 
@@ -120,12 +121,12 @@ public class OPListAdapter extends BaseAdapter {
                 if (position != 0) {
                     try {
 
-                        if (convertView == null) {
-                            convertView = layoutInflater.inflate(R.layout.list_item_body2, null);
-                            holder = new HolderOne(convertView, current);
-                            convertView.setTag(holder);
+                        if (rowView == null) {
+                            rowView = layoutInflater.inflate(R.layout.list_item_body2, parent, false);
+                            holder = new HolderOne(rowView, current);
+                            rowView.setTag(holder);
                         } else {
-                            holder = (ViewHolder) convertView.getTag();
+                            holder = (ViewHolder) rowView.getTag();
                         }
 
                     } catch (NullPointerException ne) {
@@ -139,12 +140,12 @@ public class OPListAdapter extends BaseAdapter {
                 if (position != 0) {
                     try {
 
-                        if (convertView == null) {
-                            convertView = layoutInflater.inflate(R.layout.list_item_body, null);
-                            holder = new HolderTwo(convertView, current);
-                            convertView.setTag(holder);
+                        if (rowView == null) {
+                            rowView = layoutInflater.inflate(R.layout.list_item_body, parent,false);
+                            holder = new HolderTwo(rowView, current);
+                            rowView.setTag(holder);
                         } else {
-                            holder = (ViewHolder) convertView.getTag();
+                            holder = (ViewHolder) rowView.getTag();
                         }
 
                     } catch (NullPointerException ne) {
@@ -156,7 +157,7 @@ public class OPListAdapter extends BaseAdapter {
             default:
 
         }
-        return convertView;
+        return rowView;
     }
 
     public void setStyle(int style) {

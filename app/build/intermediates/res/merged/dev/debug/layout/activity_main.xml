@@ -66,6 +66,23 @@
                 android:textStyle="normal|italic"
                 android:padding="10dp" />
             <CheckBox
+                android:text="Glide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox6"
+                android:textSize="18sp"
+                android:textStyle="normal|italic"
+                android:padding="10dp" />
+            <CheckBox
+                android:text="Gson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox7"
+                android:textSize="18sp"
+                android:textStyle="normal|italic"
+                android:padding="10dp" />
+
+            <CheckBox
                 android:text="Material Drawer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,6 +96,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/checkBox5"
+                android:textSize="18sp"
+                android:textStyle="normal|italic"
+                android:padding="10dp" />
+
+            <CheckBox
+                android:text="RxJava"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox8"
                 android:textSize="18sp"
                 android:textStyle="normal|italic"
                 android:padding="10dp" />
