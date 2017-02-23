@@ -14,7 +14,7 @@ I’m trying to make it as customizable as possible, so in the near future I'll 
 
 
 ## Sample
-<!--a href="https://play.google.com/store/apps/details?id=com.codeogenic.myapplication"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/2000px-Get_it_on_Google_play.svg.png" width="25%"></a-->
+<a href="https://play.google.com/store/apps/details?id=com.codeogenic.opensource_libraries"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/2000px-Get_it_on_Google_play.svg.png" width="25%"></a>
 
 download sample from repository
 <a href="https://github.com/clem44/Open-Sources/tree/master/app/build/outputs/apk"> Sample App download</a>
