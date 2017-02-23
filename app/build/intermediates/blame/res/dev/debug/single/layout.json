@@ -120,6 +120,10 @@
         "source": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout/abc_alert_dialog_material.xml"
     },
     {
+        "merged": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/res/merged/dev/debug/layout/about_layout.xml",
+        "source": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/src/main/res/layout/about_layout.xml"
+    },
+    {
         "merged": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/res/merged/dev/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout/abc_activity_chooser_view_list_item.xml"
     },

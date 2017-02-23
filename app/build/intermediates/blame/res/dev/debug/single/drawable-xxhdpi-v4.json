@@ -156,12 +156,12 @@
         "source": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable-xxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/res/merged/dev/debug/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
-        "source": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/res/merged/dev/debug/drawable-xxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
         "source": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable-xxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/res/merged/dev/debug/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
+        "source": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "/Users/clem_gumbs/Projects/Android Projects/Opensource-libraries/app/build/intermediates/res/merged/dev/debug/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png",

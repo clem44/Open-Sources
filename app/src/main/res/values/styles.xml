@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <!--item RadioButton or CheckBox color-->
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <!--item text color-->
+        <!--<item name="textColorAlertDialogListItem">@color/greyblack</item>-->
+        <item name="android:textColorPrimary">#fe787878</item>
+        <item name="android:textSize">16sp</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <!--<item name="android:textAppearanceMedium">@style/MyTextAppearance.Medium</item>-->
+        <!--<item name="android:windowBackground">@drawable/mydialog_background</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowTitleSize">18sp</item>
+        <!--<item name="android:borderlessButtonStyle">@style/MyApp.BorderlessButton</item>-->
+        <!--<item name="android:buttonBarButtonStyle">@style/MyApp.BorderlessButton</item>-->
+        <!--<item name="android:windowAnimationStyle">@style/MyAnimation.Window</item>-->
+        <!--<item name="android:windowMinWidthMajor">260dp</item>-->
+        <!--<item name="android:windowMinWidthMinor">260dp</item>-->
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <!--<item name="android:alertDialogStyle">@style/AlertDialog_Style</item>-->
+
+    </style>
+
 </resources>

@@ -9,7 +9,7 @@
     app:content="@+id/body"
     app:contentContainer="@+id/content_container"
     app:handle="@+id/title_handle"
-    app:expand="true"
+    app:expand="false"
     android:id="@+id/collapse_panel">
 
     <LinearLayout

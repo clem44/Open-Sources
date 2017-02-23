@@ -565,12 +565,7 @@
     <integer name="hide_password_duration">320</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <string name="MIT_Licence"> Copyright 2014 - 2017 Henning Dodenhof&lt;br>Licensed under the Apache License, Version 2.0 (the "License");&lt;br> you may not use this file except in compliance with the License.You may obtain a copy of the License at &lt;br>
-            &lt;a href="http://www.apache.org/licenses/LICENSE-2.0">
-            &lt;br>
-        Unless required by applicable law or agreed to in writing, software  distributed under the License is distributed on an "AS IS" BASIS,
-        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and
-        limitations under the License.
+    <string name="MIT_Licence">Copyright 2014 - 2017 Henning Dodenhof&lt;br>Licensed under the Apache License, Version 2.0 (the "License");&lt;br>you may not use this file except in compliance with the License.You may obtain a copy of the License at &lt;a href="http://www.apache.org/licenses/LICENSE-2.0"> Unless required by applicable law or agreed to in writing, software  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
     </string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -603,14 +598,15 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="aboutMe"> &lt;p style="text-align:justify"> opensource libraries was created by &lt;b>Clem Gumbs&lt;/b>.&lt;br>
+     It is a library for quickly creating activites and fragments that list the OP libraries included in an Android application. &lt;br> &lt;a href="https://github.com/clem44/Open-Sources">GitHub&lt;/a> &lt;/p>  </string>
     <string name="app_name">Opensource-libraries</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
-    <string name="fancy_button">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&lt;br>
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&lt;br>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
+    <string name="fancy_button">&lt;p style="text-align:justify">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:&lt;br> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&lt;br>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.&lt;/p></string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="mike_penz"> Copyright 2016 Mike Penz  Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at     http://www.apache.org/licenses/LICENSE-2.0  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</string>
+    <string name="mike_penz">Copyright 2016 Mike Penz  Licensed under the Apache License, Version 2.0 (the \"License\"). you may not use this file except in compliance with the License. You may obtain a copy of the License at  http://www.apache.org/licenses/LICENSE-2.0  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -1654,6 +1650,31 @@ The above copyright notice and this permission notice shall be included in all c
         <item name="tabBackground">?attr/selectableItemBackground</item>
         <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <!--item RadioButton or CheckBox color-->
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <!--item text color-->
+        <!--<item name="textColorAlertDialogListItem">@color/greyblack</item>-->
+        <item name="android:textColorPrimary">#fe787878</item>
+        <item name="android:textSize">16sp</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <!--<item name="android:textAppearanceMedium">@style/MyTextAppearance.Medium</item>-->
+        <!--<item name="android:windowBackground">@drawable/mydialog_background</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowTitleSize">18sp</item>
+        <!--<item name="android:borderlessButtonStyle">@style/MyApp.BorderlessButton</item>-->
+        <!--<item name="android:buttonBarButtonStyle">@style/MyApp.BorderlessButton</item>-->
+        <!--<item name="android:windowAnimationStyle">@style/MyAnimation.Window</item>-->
+        <!--<item name="android:windowMinWidthMajor">260dp</item>-->
+        <!--<item name="android:windowMinWidthMinor">260dp</item>-->
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <!--<item name="android:alertDialogStyle">@style/AlertDialog_Style</item>-->
+
     </style>
     <style name="MytextViews" parent="@android:style/TextAppearance">
         <item name="android:textColor">#313131</item>

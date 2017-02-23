@@ -1,14 +1,22 @@
 package com.codeogenic.opensource_libraries;
 
+import android.content.DialogInterface;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.codeogenic.opensources.ListItem;
 import com.codeogenic.opensources.OSOptions;
@@ -86,6 +94,54 @@ public class MainActivity extends AppCompatActivity {
         options.addItem(data.get(1));
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        // myMenu = menu;
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int idt = item.getItemId();
+        if (idt == R.id.about) {
+
+           showAboutDialog();
+        }
+
+        if (idt == android.R.id.home) {
+
+            onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showAboutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomDialogTheme);
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.about_layout, null);
+        TextView textView= (TextView) layout.findViewById(R.id.textView4);
+        textView.setText(Html.fromHtml(getResources().getString(R.string.aboutMe)));
+        builder.setView(layout);
+        builder.setTitle("About OSL");
+        //builder.setMessage();
+        builder.setCancelable(false);
+        builder.setPositiveButton("Dismiss", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                // Intent intent = new Intent(ProfileActivity.this, UserLoginActivity.class);
+                //startActivity(intent);
+                //ActivityCompat.finishAffinity(PlayScreen.this);
+
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
     private class ButtonListener implements View.OnClickListener {
 
@@ -96,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_sources:
                     Log.w(TAG, "open sources clicked");
                     options.setToolbarTitle("Open Sources");
-                    options.setHeaderText("Libraries We Use");
+                    options.setHeaderText(heading.getText().toString());
                     options.setTypefaceBold("fonts/ClanPro-Medium.otf");
                     options.setTypefaceRegular("fonts/ClanPro-Book.otf");
                     options.setLogoResource(R.mipmap.ic_launcher);
