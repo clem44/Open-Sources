@@ -4,11 +4,12 @@ It renders a list of open source information that you will provide. See the exam
 I’m trying to make it as customizable as possible, so in the near future I'll add more styling options. But for the time being it meets the basic needs.
 
 ### Style One
-<img src="http://clemgumbs.com/img/apps/Screenshot_1487792539.png" width="30%" style="padding:10px">
-<img src="http://clemgumbs.com/img/apps/Screenshot_1487792558.png" width="30%" style="padding:10px">
+<img src="http://clemgumbs.com/img/apps/Screenshot_1487865229.png" width="30%" style="padding:10px">
+<img src="http://clemgumbs.com/img/apps/Screenshot_1487865242.png" width="30%" style="padding:10px">
 
 ### Style Two
-<img src="http://clemgumbs.com/img/apps/Screenshot_1487792574.png" width="30%" style="padding:10px">
+<img src="http://clemgumbs.com/img/apps/Screenshot_1487865415.png" width="30%" style="padding:10px">
+<img src="http://clemgumbs.com/img/apps/Screenshot_1487865271.png" width="30%" style="padding:10px">
 
 
 
