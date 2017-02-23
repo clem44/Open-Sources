@@ -1,7 +1,7 @@
 # Open-Sources
 This library allows for quick dynamic generation of Open source Activity/Fragment for your application. 
 It renders a list of open source information that you will provide. See the example app for a demonstration of how it works.
-I’m trying to make it as customization as possible, but for the time being I make it to only suit my needs.
+I’m trying to make it as customizable as possible, so in the near future I'll add more styling options. But for the time being it meets the basic needs.
 
 ### Style One
 <img src="http://clemgumbs.com/img/apps/Screenshot_1487792539.png" width="30%" style="padding:10px">
@@ -20,10 +20,10 @@ download sample from repository
 
 ## Present & Futrue Features
 * Activity Builder that initialises an Open sources Activity
-* Fragment Builder that initialises an Open sources Fragment (Work in progress)
-* Choose from different default styles.
+* Fragment Builder that initialises an Open sources Fragment 
+* Choose between two different default styles. (more styling options to come)
 * Array style of appending your library information.
-* Them styling
+* Theme styling
 
 
 ### Installation
