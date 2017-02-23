@@ -3,8 +3,11 @@ This library allows for quick dynamic generation of Open source Activity/Fragmen
 It renders a list of open source information that you will provide. See the example app for a demonstration of how it works.
 I’m trying to make it as customization as possible, but for the time being I make it to only suit my needs.
 
+### Style One
 <img src="http://clemgumbs.com/img/apps/Screenshot_1487792539.png" width="30%" style="padding:10px">
 <img src="http://clemgumbs.com/img/apps/Screenshot_1487792558.png" width="30%" style="padding:10px">
+
+### Style Two
 <img src="http://clemgumbs.com/img/apps/Screenshot_1487792574.png" width="30%" style="padding:10px">
 
 
