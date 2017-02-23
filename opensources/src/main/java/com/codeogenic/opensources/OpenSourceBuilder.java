@@ -1,11 +1,18 @@
 package com.codeogenic.opensources;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
+import com.codeogenic.fragments.OpenSourcesFragment;
 
 import java.util.ArrayList;
 
@@ -34,6 +41,7 @@ public final class OpenSourceBuilder {
 
         public ActivityBuilder(Context context) {
             this.context = context;
+
             options = new OSOptions();
         }
 
@@ -74,14 +82,16 @@ public final class OpenSourceBuilder {
             options.setHeaderView(hd);
         }
 
-        public void setTitleColor(int color){
-           options.setTitleColor(color);
+        public void setTitleColor(int color) {
+            options.setTitleColor(color);
 
         }
-        public void setHeaderSummary(String summary){
+
+        public void setHeaderSummary(String summary) {
             options.setSummary(summary);
         }
-        public void setLogoImage(@DrawableRes int image){
+
+        public void setLogoImage(@DrawableRes int image) {
             options.setLogoResource(image);
         }
 
@@ -100,39 +110,38 @@ public final class OpenSourceBuilder {
 
     public static final class FragmentBuilder {
 
-        private Context context;
+        private final int containId;
+        private FragmentManager context;
         private OSOptions options;
 
-        public FragmentBuilder(@IdRes int id, Context context) {
+        public FragmentBuilder(@IdRes int id, FragmentManager context) {
             this.context = context;
             options = new OSOptions();
+            this.containId = id;
         }
 
         public void start(@NonNull OSOptions bundle) {
-            context.startActivity(getIntent(bundle));
+
+            OpenSourcesFragment frag = OpenSourcesFragment.newInstance(bundle.getOptions());
+            initFragment(frag);
+
         }
 
-        public Intent getIntent(@NonNull OSOptions bundle) {
-            return getIntent(bundle, OpenSources.class);
+        private void initFragment(Fragment frag) {
+            FragmentTransaction transaction = context.beginTransaction();
+            //transaction.setCustomAnimations(R.anim.intent_transition2, R.anim.intent_transition);
+            if (containId != 0) {
+                transaction.replace(containId, frag)
+                        .addToBackStack("categoryfrag")
+                        .commit();
+            } else
+                transaction.replace(android.R.id.content, frag)
+                        .addToBackStack("categoryfrag")
+                        .commit();
+
         }
 
-        public Intent getIntent(@NonNull OSOptions bundle, @Nullable Class<?> cls) {
 
-            Intent intent = new Intent();
-            intent.setClass(context, cls);
-            if (bundle != null)
-                intent.putExtras(bundle.getOptions());
-            else {
-                intent.putExtras(this.options.getOptions());
-            }
-            return intent;
-        }
-
-        /**
-         * Set Activit Title
-         *
-         * @param title
-         */
         public void setTitle(String title) {
             options.setToolbarTitle(title);
         }
@@ -145,27 +154,19 @@ public final class OpenSourceBuilder {
             options.setHeaderView(hd);
         }
 
-        public void setTitleColor(int color){
+        public void setTitleColor(int color) {
             options.setTitleColor(color);
 
         }
-        public void setHeaderSummary(String summary){
+
+        public void setHeaderSummary(String summary) {
             options.setSummary(summary);
         }
-        public void setLogoImage(@DrawableRes int image){
+
+        public void setLogoImage(@DrawableRes int image) {
             options.setLogoResource(image);
         }
 
-        /**
-         * Set either Dark or Light Theme
-         * use OSOptions.DARK_THEME or OSOptions.LIGHT_THEME
-         *
-         * @param theme
-         */
-        public void setTheme(int theme) {
-            options.setTheme(theme);
-
-        }
 
     }
 }

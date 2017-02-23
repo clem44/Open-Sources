@@ -2,6 +2,7 @@ package com.codeogenic.opensource_libraries;
 
 import android.content.DialogInterface;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -33,12 +35,15 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     EditText heading;
     OSOptions options = new OSOptions();
+    View root;
     ArrayList<ListItem> data = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        root = findViewById(R.id.activity_main);
 
         btn_sources = (Button) findViewById(R.id.btn_sources);
         btn_frag = (Button) findViewById(R.id.btn_frag);
@@ -86,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
         options.setStyle(OSOptions.STYLE_1);
 
     }
-
     private void initData() {
 
         data.add(new ListItem("Android Iconics", getString(R.string.mike_penz), ""));
@@ -125,6 +129,30 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        int counter = getSupportFragmentManager().getBackStackEntryCount();
+        Log.v(TAG, "Backpressed frag:" + counter);
+
+        if (counter > 0) {
+
+            if (counter > 1) {
+                getSupportFragmentManager().popBackStack();
+                //getSupportFragmentManager().getFragments().get(counter);
+                Log.v(TAG, "frag:popstack");
+            } else if (counter == 1) {
+                //Log.v(TAG, "super onbackpressed");
+                super.onBackPressed();
+
+            }
+        } else {
+            //super.onBackPressed();
+            // overridePendingTransition(R.anim.intent_enter, R.anim.intent_exit);
+            finish();
+        }
     }
 
     private void showAboutDialog() {
@@ -171,6 +199,15 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case R.id.btn_frag:
+
+                    options.setHeaderText(heading.getText().toString());
+                    options.setTypefaceBold("fonts/ClanPro-Medium.otf");
+                    options.setTypefaceRegular("fonts/ClanPro-Book.otf");
+                    options.setLogoResource(R.mipmap.ic_launcher);
+                    options.setSummary("The listed following are external libraries we have included in this application. We thank the open source community for all of their contributions.");
+                    options.setTheme(OSOptions.DARK_THEME);
+                    OpenSources.FragmentBuilder(R.id.activity_main,MainActivity.this.getSupportFragmentManager())
+                    .start(options);
                     break;
             }
         }

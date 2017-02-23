@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/toolbar"
+    android:layout_marginBottom="20dp"
+    android:minHeight="100dp"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="3"
+        android:src="@android:drawable/ic_menu_report_image"
+        android:scaleType="fitCenter"
+        android:layout_height="60dp" />
+
+    <LinearLayout
+        android:id="@+id/container_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/logo">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_head"
+            android:padding="10dp"
+            android:text="Libraries We Use"
+            android:textColor="@android:color/holo_purple"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_head"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:lineSpacingMultiplier="1.2"
+            android:text="summary"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

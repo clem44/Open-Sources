@@ -2,12 +2,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.codeogenic.fragments.OpenSourcesFragment">
+    tools:context="com.codeogenic.fragments.OpenSourcesFragment"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/mylistview"
+        android:visibility="visible"
+        android:layout_below="@+id/toolbar" />
 
 </FrameLayout>

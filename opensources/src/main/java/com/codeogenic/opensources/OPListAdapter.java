@@ -80,7 +80,7 @@ public class OPListAdapter extends BaseAdapter {
             }
         });
         wrap_style = "<html><body style=\"text-align:justify\">";
-        wrap_end ="</body></html>";
+        wrap_end = "</body></html>";
     }
 
     @Override
@@ -105,20 +105,18 @@ public class OPListAdapter extends BaseAdapter {
         View rowView = convertView;
         ViewHolder holder;
 
-        if (withHeader && position == 0) {
-            if (rowView == null) {
-                rowView= layoutInflater.inflate(R.layout.item_header,parent, false);
-                holder = new HeaderHolder(rowView, current);
-                rowView.setTag(holder);
-            } else {
-                holder = (ViewHolder) rowView.getTag();
-            }
-        }
-
         switch (mStyle) {
             case OSOptions.STYLE_1:
                 //Log.w(TAG, "getView position: " + position);
-                if (position != 0) {
+                if (withHeader && position == 0) {
+                    if (rowView == null) {
+                        rowView = layoutInflater.inflate(R.layout.item_header, parent, false);
+                        holder = new HeaderHolder(rowView, current);
+                        rowView.setTag(holder);
+                    } else {
+                        holder = (ViewHolder) rowView.getTag();
+                    }
+                } else {
                     try {
 
                         if (rowView == null) {
@@ -137,11 +135,19 @@ public class OPListAdapter extends BaseAdapter {
                 break;
 
             case OSOptions.STYLE_2:
-                if (position != 0) {
+                if (withHeader && position == 0) {
+                    if (rowView == null) {
+                        rowView = layoutInflater.inflate(R.layout.item_header2, parent, false);
+                        holder = new HeaderHolder(rowView, current);
+                        rowView.setTag(holder);
+                    } else {
+                        holder = (ViewHolder) rowView.getTag();
+                    }
+                } else {
                     try {
 
                         if (rowView == null) {
-                            rowView = layoutInflater.inflate(R.layout.list_item_body, parent,false);
+                            rowView = layoutInflater.inflate(R.layout.list_item_body, parent, false);
                             holder = new HolderTwo(rowView, current);
                             rowView.setTag(holder);
                         } else {
@@ -188,7 +194,7 @@ public class OPListAdapter extends BaseAdapter {
             summaryText = (TextView) convertView.findViewById(R.id.summary);
             try {
                 mHeading.setText(heading);
-                summary = !TextUtils.isEmpty(summary) ? wrap_style + summary+wrap_end : "";
+                summary = !TextUtils.isEmpty(summary) ? wrap_style + summary + wrap_end : "";
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     summaryText.setText(Html.fromHtml(summary, Html.FROM_HTML_MODE_COMPACT));
@@ -239,7 +245,7 @@ public class OPListAdapter extends BaseAdapter {
 
             body += !TextUtils.isEmpty(current.getUrl()) ? "\n Source -> " + current.getUrl() : "";
 
-            body = wrap_style + body +wrap_end;
+            body = wrap_style + body + wrap_end;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 mTextView.setText(Html.fromHtml(body, Html.FROM_HTML_MODE_COMPACT));
             } else {
@@ -251,9 +257,9 @@ public class OPListAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View view) {
 
-                    if ( !cl.isAnimating()) {
+                    if (!cl.isAnimating()) {
                         cl.toggle();
-                        img_button.animate().rotationBy(180f).setDuration(time*2)
+                        img_button.animate().rotationBy(180f).setDuration(time * 2)
                                 .setInterpolator(new LinearInterpolator()).setListener(new AnimatorListenerAdapter() {
                             @Override
                             public void onAnimationEnd(Animator animation) {
@@ -316,7 +322,7 @@ public class OPListAdapter extends BaseAdapter {
             mTextView = (TextView) convertView.findViewById(R.id.body);
             String body = !TextUtils.isEmpty(current.getBody()) ? current.getBody() : "";
             body += !TextUtils.isEmpty(current.getUrl()) ? "\n Source -> " + current.getUrl() : "";
-            body = wrap_style + body+wrap_end;
+            body = wrap_style + body + wrap_end;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 mTextView.setText(Html.fromHtml(body, Html.FROM_HTML_MODE_COMPACT));
             } else {

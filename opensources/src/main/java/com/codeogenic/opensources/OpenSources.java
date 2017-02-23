@@ -10,6 +10,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,8 +39,6 @@ public class OpenSources extends AppCompatActivity {
     // ExpandableListView listView;
     ListView listView;
     ArrayList<ListItem> mList;
-    TextView heading, summary;
-    ImageView logo;
     OPListAdapter mAdapter;
     View root;
     String font_bold,font_regular,font_italic;
@@ -116,6 +115,7 @@ public class OpenSources extends AppCompatActivity {
             }
         });*/
 
+
     }
 
     @Override
@@ -125,6 +125,11 @@ public class OpenSources extends AppCompatActivity {
         overrideFonts(this, root);
     }
 
+    /**
+     * Activity Builder
+     * @param context
+     * @return
+     */
     public static OpenSourceBuilder.ActivityBuilder Builder(Context context) {
         if (context == null) {
             throw new IllegalArgumentException("Context cannot be null");
@@ -134,10 +139,18 @@ public class OpenSources extends AppCompatActivity {
 
     }
 
-    public static OpenSourceBuilder.FragmentBuilder FragmentBuilder(@IdRes int container, Context context) {
+    /**
+     * Fragment Builder
+     * @param container
+     * @param context
+     * @return
+     */
+
+    public static OpenSourceBuilder.FragmentBuilder FragmentBuilder(@IdRes int container, FragmentManager context) {
         if (context == null) {
             throw new IllegalArgumentException("Context cannot be null");
         } else {
+
             return new OpenSourceBuilder.FragmentBuilder(container, context);
         }
 
